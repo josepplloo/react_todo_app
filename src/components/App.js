@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Login from './Login';
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <header >
-          <h1>Hello.</h1>
-        </header>
+        <section>
+          <Login/>
+        </section>
       </div>
     );
   }
