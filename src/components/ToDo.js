@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import store from '../reducers/todo';
+import '../index.scss';
 
 let nextTodoId = 1;  
 
@@ -8,14 +9,8 @@ const Todo = ({
   completed,
   text
 }) => (
-  <li
+  <li className={completed?"todo--completed":"todo"}
     onClick={onClick}
-    style={{
-      textDecoration:
-        completed ?
-          'line-through' :
-          'none'
-    }}
   >
     {text}
   </li>
@@ -59,13 +54,15 @@ export default class ToDo extends Component {
             placeholder="What's need to be done?"
             onKeyPress={(event) => this.addToDo(event)}/>
         </section>
-        <ul>
-          { store.getState().todos.map(todo =>
-            <li key={todo.id}>
-              {todo.text}
-            </li>
-          ) }
-        </ul>
+        <TodoList
+          todos={store.getState().todos}
+          onTodoClick={id =>
+            store.dispatch({
+              type: 'TOGGLE_TODO',
+              id
+            })
+          }
+        />
       </div>
     );
   }

@@ -4,7 +4,6 @@ import  {BrowserRouter as Router,
 
 import Login from './Login';
 import ToDo from './ToDo';
-import store from '../reducers/todo';
   
 export default class App extends Component {
   constructor(props) {
