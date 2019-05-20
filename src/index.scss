@@ -1,8 +1,59 @@
+@import './scss/mixins';
+@import './scss/variables';
+@import './scss/fonts';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lobster', cursive;
+	font-size: 16px;
+  font-weight: 400;
+}
+
+#App {
+  @include flexbox;
+  flex-direction: column; 
+  align-items: center;
+  
+
+}
+
+.login-container {
+  border: dotted ;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.5rem 0.2rem $violet-color;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+
+  & div {
+    @include flexbox;
+    justify-content: end;
+    padding: 0.5rem
+  }
+
+  & input {
+    margin-left: 0.3rem;
+    border-radius: 0.2rem;
+
+    &::placeholder {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+    }
+ 
+  }
+}
+
 .todo{
-  color: green;
+  color: $green-color;
   text-decoration-line: none;
+  cursor: pointer;
   &--completed {
-    color: gray;
+    color: $violet-color;
+    cursor: pointer;
     text-decoration-line: line-through
   }
 }  
