@@ -6,6 +6,28 @@
   display: flex; 
 }
 
+@mixin inputText {
+  margin-left: 0.3rem;
+    border-radius: 0.2rem;
+    text-align: center; 
+    font-size: 1.2rem;
+
+    &::placeholder {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+    }
+}
+@mixin appContainer {
+  @include flexbox;
+
+  align-items: flex-end;
+  border: dotted ;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.5rem 0.2rem $violet-color;
+  font-family: 'Montserrat', sans-serif;
+  flex-direction: column;
+  padding: 1rem;
+}
 @mixin transition($transition...) {
   -moz-transition:    $transition;
   -o-transition:      $transition;

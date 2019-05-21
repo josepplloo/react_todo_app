@@ -57,7 +57,7 @@ const Todo = ({ onClick, completed, text }) => (
 
 const TodoList = ({ todos , onTodoClick }) => {
   return (
-    <ul>
+    <ul className="todo-list">
     {todos.map(todo =>
       <Todo
         key={todo.id}
@@ -97,7 +97,7 @@ export default class ToDo extends Component {
       );      
 
     return (
-      <div className="ToDo">
+      <div className="app-container">
         <section>
           <input type="text" 
             placeholder="What's need to be done?"

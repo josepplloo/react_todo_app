@@ -26,7 +26,7 @@ export default class Login extends Component {
   render() {
     return (
       <Fragment>
-        <h1 className="login-title">Sign in ;)</h1>
+        <h1 className="login-title">Sign in to do.</h1>
         <form onSubmit={(event) => this.handleSubmit(event)} className="login-container">
           <div>
             <label htmlFor="email">Email: </label>
@@ -36,7 +36,7 @@ export default class Login extends Component {
             <label htmlFor="password">Pass: </label>
             <input id="password"  type="password" placeholder="more than 8 chars" required/>
           </div>
-          <input id="submit" type="submit" value="Login" />
+          <input id="submit" type="submit" value="Login ›" />
         </form>
       </Fragment>
     );

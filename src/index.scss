@@ -3,31 +3,35 @@
 @import './scss/fonts';
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'Lobster', cursive;
 	font-size: 16px;
-  font-weight: 400;
+  font-weight: bolder;
+}
+
+.login-title {
+  margin: 1rem;
 }
 
 #App {
   @include flexbox;
-  flex-direction: column; 
-  align-items: center;
-  
 
+  align-items: center;
+  flex-direction: column; 
+}
+
+#submit {
+  cursor: pointer;
+  padding: 0 0.5rem;
 }
 
 .login-container {
-  border: dotted ;
-  border-radius: 1rem;
-  box-shadow: 0rem 0.5rem 0.2rem $violet-color;
-  font-family: 'Montserrat', sans-serif;
-  padding: 1rem;
+  @include appContainer;
 
   & div {
     @include flexbox;
@@ -36,24 +40,51 @@ body {
   }
 
   & input {
-    margin-left: 0.3rem;
-    border-radius: 0.2rem;
-
-    &::placeholder {
-      text-align: center;
-      font-family: 'Lobster', cursive;
-    }
- 
+    @include inputText;
   }
+}
+
+.app-container {
+  @include appContainer;
+  font-family: 'Lobster', cursive;
+  min-width: 17rem;
+
+  & input {
+    @include inputText;
+  }
+}
+
+.todo-list {
+  @include flexbox;
+  
+  align-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 17rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  list-style-type: none;
+  text-decoration-line: none;
+
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .todo{
   color: $green-color;
-  text-decoration-line: none;
   cursor: pointer;
+  margin: 0.5rem 0;
+  
+
+  &::before {
+    content: "\200B"; /* add zero-width space */
+  }
+
   &--completed {
     color: $violet-color;
     cursor: pointer;
     text-decoration-line: line-through
   }
-}  
+
+}
